@@ -33,5 +33,5 @@ Set up your environment, in each example folder:
  [1]: https://www.codeschool.com/courses/shaping-up-with-angular-js
  [2]: https://docs.angularjs.org/api
  [3]: https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md
- [4]: https://github.com/talosdigital/u-frontend/angularjs/example1
+ [4]: https://github.com/talosdigital/u-angularjs/tree/master/001-project-file-structure
  [5]: https://github.com/Swiip/generator-gulp-angular
