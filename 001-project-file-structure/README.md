@@ -9,12 +9,12 @@ The Purpose of this example it's to understand how to set up a robust file struc
 
 For More information about Applications Structure [here][2]
 
-# To Do
+### To Do
 Perform the following in the current example:
 * Create a login page.
 * Create a Dashboard page after sign in up.
 
-# Next
+### Next
 * 002 - States, views and params
 
  [1]: http://bguiz.github.io/js-standards/angularjs/application-structure-lift-principle/
