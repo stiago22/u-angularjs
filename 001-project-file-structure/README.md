@@ -1,5 +1,5 @@
 # Project File Structure
----
+
 The Purpose of this example it's to understand how to set up a robust file structure for an Angular Project, [LIFT][1] principles:
 
 * Locating our code is easy

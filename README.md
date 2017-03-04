@@ -1,5 +1,5 @@
 # Agular JS
----
+
 The purpose of this practices it's to guide the student through angular best practices and how they work in the real life.  
 
 ### Before 
