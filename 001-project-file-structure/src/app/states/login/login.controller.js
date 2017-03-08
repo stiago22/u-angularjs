@@ -6,9 +6,8 @@
         .controller('LoginController', LoginController);
 
     /** @ngInject */
-    function LoginController(SITE_NAME, $state) {
+    function LoginController($state) {
         var vm = this;
-        vm.mainTitle = SITE_NAME;
         vm.login = {userName: ""};
         vm.submit = function () {
             $state.go('dashboard',{userName: vm.login.userName});

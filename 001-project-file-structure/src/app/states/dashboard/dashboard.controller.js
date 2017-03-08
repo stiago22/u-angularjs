@@ -6,9 +6,8 @@
         .controller('DashboardController', DashboardController);
 
     /** @ngInject */
-    function DashboardController(SITE_NAME, $stateParams ) {
+    function DashboardController($stateParams ) {
         var vm = this;
-        vm.mainTitle = SITE_NAME;
         vm.userName = $stateParams.userName;
     }
 })();
