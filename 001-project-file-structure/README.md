@@ -131,3 +131,5 @@ function DashboardController($stateParams ) {
 <h1 class="display-3">Dashboard, welcome {{dashboardCtrl.userName}}</h1>
 ```
 
+[1]: http://bguiz.github.io/js-standards/angularjs/application-structure-lift-principle/
+[2]: https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md#style-y150
