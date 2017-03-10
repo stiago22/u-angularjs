@@ -33,6 +33,8 @@ Perform the following in the current example:
 
 ![alt text](https://github.com/alejandroGranada/u-angularjs/blob/develop/001-project-file-structure/src/assets/images/image.png "files inside folder")
 ![alt text](https://github.com/alejandroGranada/u-angularjs/blob/develop/001-project-file-structure/src/assets/images/login-files.png "files inside folder")
+![alt text](https://github.com/alejandroGranada/u-angularjs/blob/develop/001-project-file-structure/src/assets/images/home-files.png "files inside folder")
+
 
 ### States:
 
