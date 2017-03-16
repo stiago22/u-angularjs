@@ -9,8 +9,9 @@
     function LoginController($state) {
         var vm = this;
         vm.login = {userName: ""};
-        vm.submit = function () {
-            $state.go('dashboard',{userName: vm.login.userName});
+        vm.submit = submitFunction;
+        function submitFunction() {
+            $state.go('dashboard', {userName: vm.login.userName});
         }
     }
 })();
