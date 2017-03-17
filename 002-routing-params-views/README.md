@@ -25,8 +25,13 @@ Perform the following in the current example:
 
 * If the user is already logged in page should not allow him to see login or signin page.
 
+### Solution
+
+If you want to see the solution, click [here][3].
+
 ### Next
 * 003 - Communicating with servers.
 
 [1]:https://github.com/angular-ui/ui-router/wiki/Multiple-Named-Views
 [2]:https://github.com/angular-ui/ui-router/wiki/Nested-States-and-Nested-Views
+[3]:https://github.com/talosdigital/u-angularjs/tree/solved/002-routing-params-views/002-routing-params-views
