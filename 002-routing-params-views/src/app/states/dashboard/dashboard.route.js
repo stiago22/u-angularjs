@@ -10,23 +10,49 @@
         $stateProvider
             .state('dashboard', {
                 abstract: true,
-                templateUrl: 'app/states/dashboard/main/dashboard.html',
-                url: '/main',
+                url: '/dashboard',
+                views:{
+                    "site@":{
+                        template: '<section class="dashboard" ui-view="main"></section>'
+                    }
+                }
+
             })
             .state('detail', {
                 parent: 'dashboard',
                 url: '/detail',
-
-                templateUrl: 'app/states/dashboard/detail/detail.html',
-                controller: 'DashboardDetailController',
-                controllerAs: 'dasDetailCtrl'
+                views:{
+                    "main@":{
+                        templateUrl: 'app/states/dashboard/detail/detail.html',
+                        controller: 'DashboardDetailController',
+                        controllerAs: 'dasDetailCtrl'
+                    }
+                }
+            })
+            .state('mainDashboard', {
+                parent: 'dashboard',
+                url: '/main-dashboard',
+                params: {
+                    currentUser: {}
+                },
+                views:{
+                    "main":{
+                        templateUrl: 'app/states/dashboard/main-dashboard/dashboard.html',
+                        controller: 'DashboardController',
+                        controllerAs: 'dasCtrl'
+                    }
+                }
             })
             .state('config', {
                 parent: 'dashboard',
                 url: '/config',
-                templateUrl: 'app/states/dashboard/dashboard/config.html',
-                controller: 'DashboardConfigController',
-                controllerAs: 'dasConfigCtrl'
+                views:{
+                    "main@":{
+                        templateUrl: 'app/states/dashboard/dashboard/config.html',
+                        controller: 'DashboardConfigController',
+                        controllerAs: 'dasConfigCtrl'
+                    }
+                }
             });
     }
 

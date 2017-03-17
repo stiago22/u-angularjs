@@ -8,5 +8,6 @@
     /** @ngInject */
     function DashboardController($stateParams) {
         var vm = this;
+        vm.currentUser = $stateParams.currentUser;
     }
 })();

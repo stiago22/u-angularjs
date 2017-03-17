@@ -65,7 +65,7 @@
     }
 
     function logOut(user){
-    	//...
+    	//localStorage.setItem('currentUser', null);
     }
 
     return vm.factory;
