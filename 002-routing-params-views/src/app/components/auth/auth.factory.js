@@ -17,8 +17,8 @@
 
     function registerUser(newUser){
   		if(!searchUser(newUser.email)){
-  			users.push(vm.newUser);
-  			localStorage.setItem('userList', JSON.stringify(users));
+  			vm.users.push(newUser);
+  			localStorage.setItem('userList', JSON.stringify(vm.users));
   			return 'Succesfuly Registered, redirecting...';
   		}else{
   			return 'Email already been used, redirecting...';

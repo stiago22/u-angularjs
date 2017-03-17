@@ -15,7 +15,7 @@
     
     function signInUser() {
       vm.alert = Auth.registerUser(vm.newUser);
-      vm.newUser = {};
+      //vm.newUser = {};
   		redirect();
     }
 
