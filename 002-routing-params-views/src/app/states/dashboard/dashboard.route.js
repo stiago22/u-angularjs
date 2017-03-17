@@ -20,7 +20,8 @@
                         controller: 'NavbarController',
                         controllerAs: 'navCtrl'
                     }
-                },onEnter: function(Auth, $state){
+                },
+                onEnter: function(Auth, $state){
                     if(!Auth.currentUser()){
                         $state.go('login');
                     }
