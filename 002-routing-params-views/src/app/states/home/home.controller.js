@@ -10,14 +10,9 @@
         var vm = this;
         vm.mainTitle = SITE_NAME;
         vm.signUpToday = signUpToday;
-        vm.goToDashboard = goToDashboard;
-
 
         function signUpToday() {
             $state.go('signin');
-        }
-        function goToDashboard() {
-            $state.go('mainDashboard');
         }
     }
 })();

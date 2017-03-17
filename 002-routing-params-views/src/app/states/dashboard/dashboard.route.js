@@ -14,6 +14,15 @@
                 views:{
                     "site@":{
                         template: '<section class="dashboard" ui-view="main"></section>'
+                    },
+                    "navbar@":{
+                        templateUrl: 'app/components/navbar/navbar.html',
+                        controller: 'NavbarController',
+                        controllerAs: 'navCtrl'
+                    }
+                },onEnter: function(Auth, $state){
+                    if(!Auth.currentUser()){
+                        $state.go('login');
                     }
                 }
 
@@ -22,7 +31,7 @@
                 parent: 'dashboard',
                 url: '/detail',
                 views:{
-                    "main@":{
+                    "main":{
                         templateUrl: 'app/states/dashboard/detail/detail.html',
                         controller: 'DashboardDetailController',
                         controllerAs: 'dasDetailCtrl'

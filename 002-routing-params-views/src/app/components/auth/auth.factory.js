@@ -12,6 +12,7 @@
     vm.factory = {
     	registerUser: registerUser,
     	logIn:logIn,
+        logOut: logOut,
     	currentUser: currentUser
     };
 
@@ -64,8 +65,8 @@
     	return current;
     }
 
-    function logOut(user){
-    	//localStorage.setItem('currentUser', null);
+    function logOut(){
+    	localStorage.setItem('currentUser', null);
     }
 
     return vm.factory;
