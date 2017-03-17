@@ -19,9 +19,9 @@
   		if(!searchUser(newUser.email)){
   			users.push(vm.newUser);
   			localStorage.setItem('userList', JSON.stringify(users));
-  			return 'Succesfuly Registered, redirecting...';
+  			return true;
   		}else{
-  			return 'Email already been used, redirecting...';
+  			return false;
   		}
     };
 
