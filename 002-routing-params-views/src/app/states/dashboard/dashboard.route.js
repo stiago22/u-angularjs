@@ -26,7 +26,6 @@
                         $state.go('login');
                     }
                 }
-
             })
             .state('detail', {
                 parent: 'dashboard',

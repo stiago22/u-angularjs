@@ -12,7 +12,7 @@ You should read about Angularjs Documentation, in this examples why asume that y
 Content of the practice materials, take your time to develop the content, if you have any question, we will provide extra material in every practice so you can dig deeper in the knowlage:
 
 * 001 - [Project File Structure][4]
-* 002 - States, views and params
+* 002 - [States, views and params][6]
 * 003 - Communitcating with Servers
 * 004 - Directives
 ...
@@ -35,3 +35,4 @@ Set up your environment, in each example folder:
  [3]: https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md
  [4]: https://github.com/talosdigital/u-angularjs/tree/master/001-project-file-structure
  [5]: https://github.com/Swiip/generator-gulp-angular
+ [6]: https://github.com/talosdigital/u-angularjs/tree/master/002-routing-params-views

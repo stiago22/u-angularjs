@@ -7,19 +7,31 @@ The Purpose of this example it's to understand a more depth routing system, invo
 * Views `ui-view`
 * Sending params `$stateParams`
 
+There is information about [Multiple Named Views][1] and [Parent and Abstract States][2], take a look of this documentation to get a clearer concept about views and routes.
+
 ### To Do
 Perform the following in the current example:
 * Create an `abstract` state for the `dashboard` module, with the following views:
   * Config, use `resolve` in this state to load a `configuration.json` file.
   * Detail, use `params` to send the detail component wanted.
   * Main, dashboard view.
- * Create a `navbar` to navigate in the pages:
-   * show the page name, and buttons to login and logout.
-   * show the current user name.
-   * hidden in home, login and sigin states, but using routes views.
-   * navbar should be a directive.
-   * use authFactory to get the login data.
- * If the user is already logged in page should not allow him to see login or signin page.
+
+* Create a `navbar` to navigate in the pages:
+   * Show the current user name.
+   * Show a logout button.
+   * Should be a directive.
+   * Use authFactory to get the login data.
+   * Use `ui-view` to show, depending of the `dashboard` state.
+
+* If the user is already logged in page should not allow him to see login or signin page.
+
+### Solution
+
+If you want to see the solution, click [here][3].
 
 ### Next
 * 003 - Communicating with servers.
+
+[1]:https://github.com/angular-ui/ui-router/wiki/Multiple-Named-Views
+[2]:https://github.com/angular-ui/ui-router/wiki/Nested-States-and-Nested-Views
+[3]:https://github.com/talosdigital/u-angularjs/tree/solved/002-routing-params-views/002-routing-params-views

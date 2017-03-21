@@ -14,8 +14,12 @@
     vm.signInUser = signInUser;
     
     function signInUser() {
-      vm.alert = Auth.registerUser(vm.newUser);
-      //vm.newUser = {};
+
+      if(Auth.registerUser(vm.newUse)){
+        vm.alert = 'Succesfuly Registered, redirecting...';
+      }else{
+        vm.alert = 'Email already been used, redirecting...';
+      }
   		redirect();
     }
 
