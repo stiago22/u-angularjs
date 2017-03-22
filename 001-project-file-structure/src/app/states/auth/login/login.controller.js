@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('angularEx1')
+        .module('login.controller', [])
         .controller('LoginController', LoginController);
 
     /** @ngInject */
@@ -11,7 +11,9 @@
         vm.login = {userName: ""};
         vm.submit = submitFunction;
         function submitFunction() {
-            $state.go('dashboard', {userName: vm.login.userName});
+            if (vm.login.userName !='') {
+                $state.go('dashboard', {userName: vm.login.userName});                
+            }
         }
     }
 })();

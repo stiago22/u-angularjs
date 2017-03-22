@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('angularEx1')
+    .module('home.controller', [])
     .controller('HomeController', HomeController);
 
   /** @ngInject */
