@@ -9,7 +9,7 @@
         .controller('DashboardDetailController', DashboardDetailController);
 
     /** @ngInject */
-    function DashboardDetailController($log, $stateParams, Auth) {
+    function DashboardDetailController($log, $stateParams) {
         var vm = this;
 
         vm.currentId = $stateParams.id;
