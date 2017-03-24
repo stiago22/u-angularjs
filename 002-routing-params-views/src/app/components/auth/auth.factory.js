@@ -18,7 +18,7 @@
 
         function registerUser(newUser) {
             if (!searchUser(newUser.email)) {
-                users.push(vm.newUser);
+                vm.users.push(vm.newUser);
                 localStorage.setItem('userList', JSON.stringify(vm.users));
                 return true;
             } else {

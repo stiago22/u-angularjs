@@ -32,12 +32,12 @@
                 controller: 'AuthLoginController',
                 controllerAs: 'auLoginCtrl'
             })
-            .state('signin', {
+            .state('signup', {
                 parent: 'auth',
-                url: '/signin',
-                templateUrl: 'app/states/auth/signin/signin.html',
-                controller: 'AuthSigninController',
-                controllerAs: 'auSigninCtrl'
+                url: '/signup',
+                templateUrl: 'app/states/auth/signup/signup.html',
+                controller: 'AuthSignUpController',
+                controllerAs: 'auSignupCtrl'
             });
     }
 
