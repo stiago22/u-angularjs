@@ -26,4 +26,4 @@ You might noticed that the example it's not completed, that's part of the challe
 [6]: http://angular-ui.github.io/ui-leaflet/#!/examples/marker
 [7]: https://material.angularjs.org/latest/api/service/$mdDialog
 [8]: https://openweathermap.org/api/uvi
-[9]: [https://openweathermap.org/api/pollution/co]
+[9]: https://openweathermap.org/api/pollution/co
