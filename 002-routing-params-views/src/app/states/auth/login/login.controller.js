@@ -6,7 +6,7 @@
     .controller('AuthLoginController', AuthLoginController);
 
   /** @ngInject */
-  function AuthLoginController($log, $stateParams, Auth) {
+  function AuthLoginController($log, $stateParams, $state, Auth) {
     var vm = this;
     vm.error = false;
     vm.currentUser = $stateParams.currentUser;
@@ -15,7 +15,7 @@
 
    	function logIn(){
    		if(Auth.logIn(vm.currentUser)){
-   			//$state.go('');
+   			$state.go('mainDashboard');
    			$log.debug('Great logged', Auth.currentUser());
    		}else{
    			vm.error = true;
