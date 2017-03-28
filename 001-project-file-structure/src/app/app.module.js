@@ -5,14 +5,11 @@
     .module('angularEx1', [
       'ngAnimate', 
       'ngCookies', 
-      'ngTouch', 
-      'ngSanitize', 
-      'ngAria', 
-      'ngResource', 
-      'ui.router',
+      'ngResource',
       'app.config', 
 			'app.constants',
-			'app.controllers',
+      'app.layout',
+			'app.states',
 			'app.route',
 			'app.run'
     ]);

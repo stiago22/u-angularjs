@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('home.controller', [])
+    .module('app.states')
     .controller('HomeController', HomeController);
 
   /** @ngInject */

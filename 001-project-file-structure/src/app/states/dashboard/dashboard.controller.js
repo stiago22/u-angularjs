@@ -2,11 +2,11 @@
     'use strict';
 
     angular
-        .module('dashboard.controller', [])
+        .module('app.states')
         .controller('DashboardController', DashboardController);
 
     /** @ngInject */
-    function DashboardController($stateParams ) {
+    function DashboardController($stateParams) {
         var vm = this;
         vm.userName = $stateParams.userName;
     }

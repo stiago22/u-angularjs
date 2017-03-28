@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('login.controller', [])
+        .module('app.states')
         .controller('LoginController', LoginController);
 
     /** @ngInject */

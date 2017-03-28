@@ -2,7 +2,9 @@
     'use strict';
 
     angular
-        .module('app.route',[])
+        .module('app.route',[           
+          'ui.router'
+          ])
         .config(routerConfig);
 
     /** @ngInject */
@@ -27,9 +29,9 @@
                 controller: 'DashboardController',
                 controllerAs: 'dashboardCtrl',
                 onEnter: function($state, $stateParams){
-                    if (!angular.isString($stateParams.userName) || !$stateParams.userName.length) {
-                        $state.go('login');
-                    }
+                  if (!angular.isString($stateParams.userName) || !$stateParams.userName.length) {
+                    $state.go('login');
+                  }
                 }
             });
 
