@@ -6,15 +6,11 @@
     .controller('WeatherController', WeatherController);
 
   /** @ngInject */
-  function WeatherController($http, $scope) {
+  function WeatherController($http, $scope, $mdDialog, WeatherFactory, $log) {
     var vm = this;
 
-    //Talitos API Key
-    vm.apiKey = '534eccb946ce639dbb41f82b8be15dcc';
     vm.kind = '0';
-
-    //Should we extend or use vm?
-    angular.extend($scope, {
+    vm.options = {
         center: {
             lat: 38.8225909761771,
             lng: -96.5478515625,
@@ -29,25 +25,68 @@
                 logic: 'emit'
             }
         }
-    });
+    };
 
-    $scope.$on('leafletDirectiveMap.map.click', function(event, args){
+    $scope.$on('leafletDirectiveMap.map.click', triggerClick);
+
+    function triggerClick(event, args){
+
+        vm.lat = args.leafletEvent.latlng.lat;
+        vm.lon = args.leafletEvent.latlng.lng;
+
         if(vm.kind == '0'){
-            //Remember Services
-            $http({
-                method: 'GET',
-                url: 'http://api.openweathermap.org/data/2.5/weather?APPID='+vm.apiKey+'&q=London'
-            }).then(function successCallback(response) {
-                alert(response.data.name); //Not a good practice 
-            }, function errorCallback(response) {
-                alert('Error');
-            });
+            WeatherFactory.getWeather(vm.lat, vm.lon).query({},{},function(response) {
+                if(response && response.name && response.weather[0] && response.main.temp){
+                    vm.response = {
+                        place: response.name,
+                        weather: response.weather[0].description,
+                        temp: response.main.temp,
+                        success: true 
+                    };
+                }else{
+                    vm.response = {
+                        success: false 
+                    };
+                }
+
+                openModal();
+
+              }, function(err){
+                $log.debug('There was an error',err);
+              });
         }else if(vm.kind == '1'){
-            //http://api.openweathermap.org/v3/uvi/{lat},{lon}./current.json?appid={your-api-key}
-        }else if(vm.kind == '2'){
-            //http://api.openweathermap.org/pollution/v1/co/{location}/current.json?appid={api_key}
+             WeatherFactory.getUV().query({latlng: [Math.round(vm.lat,1), Math.round(vm.lon,1)]},{},function(response) {
+                if(response && response.data){
+                    vm.response = {
+                        uv: response.data,
+                        success: true 
+                    };
+                }else{
+                    vm.response = {
+                        success: false 
+                    };
+                }
+
+                openModal();
+
+            }, function(err){
+                $log.debug('There was an error',err);
+            }); 
         }
-    });
+    }
+
+    function openModal(){
+        $mdDialog.show({
+            controller: 'DialogController',
+            templateUrl: 'app/states/weather/dialog/dialog.html',
+            parent: angular.element(document.body),
+            clickOutsideToClose: true,
+            locals: {
+                data: vm.response
+            },
+            controllerAs: 'dialogCtrl'
+        });
+    }
 
   }
 
