@@ -16,6 +16,6 @@
 
   /** @ngInject */
   function bodyController(){
-      var bodyCtrl = this;
+      
   }
 })();

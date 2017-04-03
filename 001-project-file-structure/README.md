@@ -8,6 +8,14 @@
 
 * Inside those folders create the view, controller and its corresponding stylesheet, This is for having reusable views totally independent of each other.
 
+### Core
+
+* We create this module to isolate the main dependencies of the application, `app.route.js`, `app.run.js`, `app.constants.js`
+
+### Layout
+
+* This module it's going to contain everything related with the layout of the application, we may grow it with folders like `navbar`, `header`, `side-nav`, etc. 
+
 ### States:
 
 * In this example we used UI-Router which introduces a state machine design pattern abstraction on top of a traditional router. Routes are referred to as states and the URL becomes simply a property of the state.
@@ -28,7 +36,7 @@
 
 ### Printing variable in html:
 
-* To print the paremeter sent from login intro dashboard view, use angular expression {{dashboardCtrl.userName"}}.
+* To print the parameter sent from login intro dashboard view, use angular expression {{dashboardCtrl.userName"}}.
 
 
 [1]: http://bguiz.github.io/js-standards/angularjs/application-structure-lift-principle/
