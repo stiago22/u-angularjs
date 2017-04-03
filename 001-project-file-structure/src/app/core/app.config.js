@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('angularEx1')
+    .module('app.config', [])
     .config(config);
 
   /** @ngInject */

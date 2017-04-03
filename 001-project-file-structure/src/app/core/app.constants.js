@@ -2,6 +2,6 @@
   'use strict';
 
   angular
-    .module('angularEx1')
+    .module('app.constants', [])
     .constant('SITE_NAME', 'Talos University');
 })();
