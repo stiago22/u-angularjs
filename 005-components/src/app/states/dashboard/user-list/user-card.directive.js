@@ -8,7 +8,6 @@
   function userCard () {
     return {
       restrict: 'E',
-      replace: true,
       scope: {
         user: '=',
         onUserSelected: '&',

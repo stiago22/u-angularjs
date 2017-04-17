@@ -18,7 +18,7 @@
     </div>
   </div>
   <div class="row">
-    <user-card ng-repeat="user in userListCtrl.users" user="user"
+    <user-card class="col-sm-6 col-md-4" ng-repeat="user in userListCtrl.users" user="user"
                on-user-selected="userListCtrl.selectedUser(user)"
                on-user-left="userListCtrl.blurUser(user)"></user-card>
   </div>
