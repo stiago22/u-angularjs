@@ -1,12 +1,15 @@
 <section class="login-view">
     <div class="container">
         <div class="wrapper">
+
+            <h3 class="display-4">Login</h3>
+            <p>Welcome to Talos University</p>
+
             <form ng-submit="loginCtrl.submit()" name="Login_Form" class="form-signin" novalidate>
-                <h3 class="form-signin-heading">Please Sign In</h3>
-                <hr class="colorgraph">
-                <br>
-                <input type="text" class="form-control" ng-model="loginCtrl.login.userName" placeholder="Username" required="" autofocus=""/><br>
-                <button class="btn btn-lg btn-primary btn-block" name="Submit" value="Login" type="Submit">Login
+                <label for="username">Username:</label>
+                <input id="username" type="text" class="form-control" ng-model="loginCtrl.login.userName" required="" autofocus=""/><br>
+
+                <button class="btn main-btn btn-primary btn-block" name="Submit" value="Login" type="Submit">Login
                 </button>
             </form>
         </div>
