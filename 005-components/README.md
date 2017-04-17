@@ -19,3 +19,4 @@ If you want to see the solution, click [here][4].
 [1]:https://github.com/talosdigital/u-angularjs/tree/master/002-routing-params-views
 [2]:https://github.com/talosdigital/u-angularjs/
 [3]:https://docs.angularjs.org/guide/component
+[4]:https://github.com/talosdigital/u-angularjs/tree/solved/005-components/005-components
