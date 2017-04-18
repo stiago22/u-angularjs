@@ -6,15 +6,8 @@
     .controller('CardController', CardController);
 
   /** @ngInject */
-  function CardController($scope) {
-
+  function CardController() {
     var vm = this;
-    vm.favorite = $scope.favorite;
-    vm.title = $scope.title;
-    vm.description = $scope.description;
-    vm.reservedBy = $scope.reservedBy;
-    vm.background = $scope.background;
-
   }
 
 })();
