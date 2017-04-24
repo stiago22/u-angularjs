@@ -1,23 +1,11 @@
 # 006 - Basic Testing
 
-The Purpose of this example it's to help you understand the basic concepts about unit testing, in this example we are going to work with [`karma`][1] as our test runner and [`jasmine`][2] to write our tests, using our previous example [003 - Servers and Maps][3] as starting point we are going to cover:
+* We recomend to test services with `$httpBackend` it is very helpfull to mock servers calls and it will separate the logic from the controller, it is easeier to test and to understand.
 
-*  Testing Services
-*  Testing Controllers
-*  Setup Jasmine with Karma
-*  Coverage Report
+* If you take a look of the Controller spec and you will find that we are mocking the service that we previously described to only manage promises, we are not testing our service in the controller spec, because it has being tested on it's own spec.
 
-### To Do
-Before of getting started please take a look of jasmine [documentantion][4] if you don't have previous expirence with tests:
-* Create a test for the Service `WeatherFactory`
-* Create a test for the Controller `WeatherController`
+* In the controller spec, take a look of the controller declaration before each describe, and pointing `WeatherFactory` to the mocked Service object. 
 
-### Solution
+In that way we are able to get 100% of coverage test.
 
-Take a look of the solution  [here][5].
-
-[1]:https://karma-runner.github.io/1.0/index.html
-[2]:https://jasmine.github.io/pages/docs_home.html
-[3]:https://github.com/talosdigital/u-angularjs/tree/master/003-servers-and-maps
-[4]:https://jasmine.github.io/2.5/introduction
-[5]: https://github.com/talosdigital/u-angularjs/tree/solved/006-basic-testing
+Note: in this example we are not testing the materials modal, we will provide this example in the advanced testing practice.

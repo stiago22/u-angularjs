@@ -13,18 +13,18 @@ describe('WeatherController', function () {
     suite.weatherFactoryMock = {
     	getWeather: function(lat, lon){
     		return {
-    			query: function(params, body, callback, errCallback){
+    			query: function(){
     				suite.queryDeferred = suite.$q.defer();
        				return { $promise: suite.queryDeferred.promise };
-				}
+				  }
     		};
     	},
 		getUV: function(lat, lon){
     		return {
-    			query: function(params, body, callback, errCallback){
+    			query: function(){
     				suite.queryDeferred = suite.$q.defer();
-       				return { $promise: suite.queryDeferred.promise };
-				}
+       			return { $promise: suite.queryDeferred.promise };
+				  }
     		};
     	},
     };
@@ -59,12 +59,12 @@ describe('WeatherController', function () {
 
   function resolveAndRefresh(data){
   	suite.queryDeferred.resolve(data);
-	suite.$rootScope.$apply();
+	  suite.$rootScope.$apply();
   }
 
   function rejectAndRefresh(data){
   	suite.queryDeferred.reject(data);
-	suite.$rootScope.$apply();
+	  suite.$rootScope.$apply();
   }
 
   describe('triggerClick function', function () {

@@ -37,7 +37,7 @@
       	
       	var promise = weatherFactory.getWeather(lat,lon);
 
-      	promise.query({},{},function(response){
+      	promise.query().$promise.then(function(response){
       		expect(response.data).toBe('Weather on');
       	});
 
@@ -59,7 +59,7 @@
         
         var promise = weatherFactory.getUV();
 
-        promise.query({latlng: [lat, lon]},{},function(response) {
+        promise.query({latlng: [lat, lon]}).$promise.then(function(response) {
           expect(response.data).toBe('UV on');
         });
 
