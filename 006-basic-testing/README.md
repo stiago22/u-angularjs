@@ -26,4 +26,4 @@ Take a look of the solution  [here][5].
 [2]:https://jasmine.github.io/pages/docs_home.html
 [3]:https://github.com/talosdigital/u-angularjs/tree/master/003-servers-and-maps
 [4]:https://jasmine.github.io/2.5/introduction
-[5]: https://github.com/talosdigital/u-angularjs/tree/solved/006-basic-testing
+[5]:https://github.com/talosdigital/u-angularjs/tree/solved/006-basic-testing/006-basic-testing
