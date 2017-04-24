@@ -7,10 +7,16 @@ The Purpose of this example it's to help you understand the basic concepts about
 *  Setup Jasmine with Karma
 *  Coverage Report
 
+### To Run Tests
+
+* `gulp test` will build the tests of the app.
+* coverage test result can be found in: `/coverage/PhantomJs***/index.html`
+
 ### To Do
 Before of getting started please take a look of jasmine [documentantion][4] if you don't have previous expirence with tests:
 * Create a test for the Service `WeatherFactory`
 * Create a test for the Controller `WeatherController`
+* We need 100% of covarage test result
 
 ### Solution
 
