@@ -12,13 +12,13 @@
       $httpBackend.when('GET', /(.*)\.json/).respond();
       $httpBackend.when('GET', /(.*)\.html/).respond();
       WEATHER_API = $injector.get('WEATHER_API');
-      weatherApi = 'http://api.openweathermap.org/data/2.5/weather';
+      weatherApi = 'http://api.openweathermap.org';
     }));
 
     afterEach(function() {
-	    $httpBackend.verifyNoOutstandingExpectation();
-	    $httpBackend.verifyNoOutstandingRequest();
-	});
+  	  $httpBackend.verifyNoOutstandingExpectation();
+  	  $httpBackend.verifyNoOutstandingRequest();
+  	});
 
     it('should be registered', function() {
       expect(weatherFactory).not.toEqual(null);
@@ -29,11 +29,11 @@
         expect(weatherFactory.getWeather).not.toEqual(null);
       });
 
-      it('should return array of object', function() {
+      it('should return weather of lat lng', function() {
       	//Wasatch County
       	var lat = 40.245991504199026, lon = -111.181640625;
 
-      	$httpBackend.expectGET( weatherApi + '?APPID='+WEATHER_API+'&lat='+lat+'&lon='+lon ).respond({data:'Weather on'});
+      	$httpBackend.expectGET( weatherApi + '/data/2.5/weather' + '?APPID='+WEATHER_API+'&lat='+lat+'&lon='+lon ).respond({data:'Weather on'});
       	
       	var promise = weatherFactory.getWeather(lat,lon);
 
@@ -45,5 +45,28 @@
 
       });
     });
+
+    describe('getUV function', function() {
+      it('should exist', function() {
+        expect(weatherFactory.getUV).not.toEqual(null);
+      });
+
+      it('should return UV of lat lng', function() {
+        //Wasatch County
+        var lat = 40.24, lon = -111.18;
+
+        $httpBackend.expectGET( weatherApi + '/v3/uvi/'+  [lat, lon] + '/current.json?appid='+WEATHER_API ).respond({data:'UV on'});
+        
+        var promise = weatherFactory.getUV();
+
+        promise.query({latlng: [lat, lon]},{},function(response) {
+          expect(response.data).toBe('UV on');
+        });
+
+        $httpBackend.flush();
+
+      });
+    });
+
   });
 })();

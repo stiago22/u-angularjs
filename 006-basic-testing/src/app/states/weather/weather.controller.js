@@ -6,7 +6,7 @@
     .controller('WeatherController', WeatherController);
 
   /** @ngInject */
-  function WeatherController($http, $scope, $mdDialog, WeatherFactory, $log) {
+  function WeatherController($scope, $mdDialog, WeatherFactory, $log) {
     var vm = this;
 
     vm.kind = '0';
@@ -27,7 +27,10 @@
         }
     };
 
-    $scope.$on('leafletDirectiveMap.map.click', triggerClick);
+    vm.triggerClick = triggerClick;
+    vm.openModal = openModal;
+
+    $scope.$on('leafletDirectiveMap.map.click', vm.triggerClick);
 
     function triggerClick(event, args){
 
@@ -35,7 +38,7 @@
         vm.lon = args.leafletEvent.latlng.lng;
 
         if(vm.kind == '0'){
-            WeatherFactory.getWeather(vm.lat, vm.lon).query({},{},function(response) {
+            WeatherFactory.getWeather(vm.lat, vm.lon).query().$promise.then(function(response){
                 if(response && response.name && response.weather[0] && response.main.temp){
                     vm.response = {
                         place: response.name,
@@ -48,14 +51,12 @@
                         success: false 
                     };
                 }
-
-                openModal();
-
-              }, function(err){
-                $log.debug('There was an error',err);
-              });
+                vm.openModal();
+            }).catch(function(err){
+                $log.debug('Error:',err);
+            });
         }else if(vm.kind == '1'){
-             WeatherFactory.getUV().query({latlng: [Math.round(vm.lat,1), Math.round(vm.lon,1)]},{},function(response) {
+            WeatherFactory.getUV().query({latlng: [Math.round(vm.lat,1), Math.round(vm.lon,1)]}).$promise.then(function(response){
                 if(response && response.data){
                     vm.response = {
                         uv: response.data,
@@ -67,11 +68,10 @@
                     };
                 }
 
-                openModal();
-
-            }, function(err){
-                $log.debug('There was an error',err);
-            }); 
+                vm.openModal();
+            }).catch(function(err){
+                $log.debug('Error:',err);
+            });
         }
     }
 
