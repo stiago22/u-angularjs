@@ -15,7 +15,10 @@ Content of the practice materials, take your time to develop the content, if you
 * 002 - [States, views and params][6]
 * 003 - [Servers and Maps][7]
 * 004 - [Directives][8]
-...
+* 005 - [Components][9]
+* 006 - [Testing Services][10]
+* 007 - [End to End][11]
+
 
 ### Install
 To run the examples you should run `gulp serve`, each folder has it's own server and their own dependencies.
@@ -38,3 +41,6 @@ Set up your environment, in each example folder:
  [6]: https://github.com/talosdigital/u-angularjs/tree/master/002-routing-params-views
  [7]: https://github.com/talosdigital/u-angularjs/tree/master/003-servers-and-maps
  [8]: https://github.com/talosdigital/u-angularjs/tree/master/004-directives
+ [9]: https://github.com/talosdigital/u-angularjs/tree/master/005-components
+ [10]: https://github.com/talosdigital/u-angularjs/tree/master/006-testing-services
+ [11]: https://github.com/talosdigital/u-angularjs/tree/master/007-end-to-end
