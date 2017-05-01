@@ -1,4 +1,4 @@
-# 007 - Testing Directives
+# 008 - Testing Directives
 
 The Purpose of this example it's to teach you how to test directives that use Templates Urls, we are going to work with the previous example of [Directives][1] and we are going to cover the following concepts:
 
