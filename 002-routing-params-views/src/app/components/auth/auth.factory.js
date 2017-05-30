@@ -8,7 +8,7 @@
   /** @ngInject */
   function AuthFactory() {
     var vm = this;
-    vm.users = localStorage.getItem('userList')?(JSON.parse(localStorage.getItem('userList'))):[];
+    vm.users = localStorage.getItem('userList') ? (JSON.parse(localStorage.getItem('userList'))) : [];
     vm.factory = {
     	registerUser: registerUser,
     	logIn:logIn,
@@ -17,8 +17,8 @@
 
     function registerUser(newUser){
   		if(!searchUser(newUser.email)){
-  			users.push(vm.newUser);
-  			localStorage.setItem('userList', JSON.stringify(users));
+  			vm.users.push(newUser);
+  			localStorage.setItem('userList', JSON.stringify(vm.users));
   			return true;
   		}else{
   			return false;
