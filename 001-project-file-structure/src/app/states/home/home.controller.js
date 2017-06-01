@@ -6,13 +6,14 @@
     .controller('HomeController', HomeController);
 
   /** @ngInject */
-  function HomeController($log, SITE_NAME) {
+  function HomeController($log, $state, SITE_NAME) {
     var vm = this;
     vm.mainTitle = SITE_NAME;
     vm.signUpToday = signUpToday;
 
     function signUpToday(){
       $log.debug('signUpToday clicked!');
+      $state.go('login');
     }
 
   }
