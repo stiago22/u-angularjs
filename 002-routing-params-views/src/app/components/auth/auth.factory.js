@@ -11,6 +11,7 @@
     factory = {
     	registerUser: registerUser,
     	logIn:logIn,
+      logOut:logOut,
     	currentUser: currentUser
     };
 
@@ -64,7 +65,7 @@
     }
 
     function logOut(user){
-    	//...
+    	localStorage.removeItem('currentUser');
     }
 
     return factory;

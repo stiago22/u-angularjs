@@ -1,0 +1,27 @@
+<nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+  <button class="navbar-toggler navbar-toggler-right hidden-lg-up" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <h2 class="navbar-brand">{{navCtrl.user.name}}</h2>
+
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item" ng-class="{active: navCtrl.state === 'main'}">
+        <a class="nav-link" ng-click="navCtrl.goToMain()">Main <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item" ng-class="{active: navCtrl.state === 'details'}">
+        <a class="nav-link" ng-click="navCtrl.goToDetails()">Details</a>
+      </li>
+      <li class="nav-item" ng-class="{active: navCtrl.state === 'config'}">
+        <a class="nav-link" ng-click="navCtrl.goToConfig()">Config</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" ng-click="navCtrl.logOut()">Log Out</a>
+      </li>
+    </ul>
+    <form class="form-inline mt-2 mt-md-0">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
