@@ -7,7 +7,7 @@
 
   /** @ngInject */
   function CardController() {
-    var vm = this;
+    var vm 				= this;
   }
 
 })();
