@@ -1,0 +1,15 @@
+<section class="login-view d-flex align-items-center">
+	<div class="jumbotron">
+	    <h1 class="display-3">Welcome!</h1>
+	    <div>
+	    	<label for="username">Username:</label>
+        	<input id="username" type="text" class="form-control" ng-model="loginCtrl.user.name" required="" autofocus=""/>
+        	<label for="password">Password:</label>
+        	<input id="password" type="text" class="form-control" ng-model="loginCtrl.user.password" required="" autofocus=""/>
+        </div>
+        <div>
+        	<a class="btn btn-lg btn-success" role="button" ng-click="loginCtrl.login()">Login</a>
+        </div>	
+	    <div class="alert alert-danger" role="alert" ng-show="loginCtrl.showErrorMsg"> {{loginCtrl.failureMsg}} </div>
+	</div>
+</section>
