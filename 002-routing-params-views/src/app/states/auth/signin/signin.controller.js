@@ -3,13 +3,13 @@
 
   angular
     .module('angularApp')
-    .controller('AuthSigninController', AuthSigninController);
+    .controller('SignInController', SignInController);
 
   /** @ngInject */
-  function AuthSigninController($log, $timeout, $state, Auth) {
-    var vm = this;
+  function SignInController($log, $timeout, $state, Auth) {
+    var vm        = this;
 
-    vm.newUser = {};
+    vm.newUser    = {};
 
     vm.signInUser = signInUser;
     
