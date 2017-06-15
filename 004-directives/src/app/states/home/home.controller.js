@@ -14,7 +14,6 @@
     vm.favoriteCards  = [];
     vm.setIcon        = setIcon;
     vm.addToFavorites = addToFavorites;
-    vm.showAdd        = false;
 
     function setIcon(iconClass) {
       vm.card.icon = iconClass;
