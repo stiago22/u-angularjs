@@ -15,13 +15,37 @@
 
         <div md-color-picker ng-model="homeCtrl.card.background" label="Background"></div>
 
-        <div md-color-picker ng-model="homeCtrl.card.textColor" label="Text Color"></div>
+        <div md-color-picker ng-model="homeCtrl.card.color" label="Text Color"></div>
+
+        <md-input-container class="md-block md-input-has-value">
+          <label for="input_43">Title</label>
+          <input  class="ng-pristine ng-valid md-input ng-not-empty ng-touched" id="input_43" aria-invalid="false" ng-model="homeCtrl.card.title"><div class="md-errors-spacer"></div>
+        </md-input-container>
+
+        <md-input-container class="md-block md-input-has-value">
+          <label for="input_43">Description</label>
+          <input  class="ng-pristine ng-valid md-input ng-not-empty ng-touched" id="input_43" aria-invalid="false" ng-model="homeCtrl.card.description"><div class="md-errors-spacer"></div>
+        </md-input-container>
+
+        <md-input-container class="md-block md-input-has-value">
+          <label for="input_43">Message</label>
+          <input  class="ng-pristine ng-valid md-input ng-not-empty ng-touched" id="input_43" aria-invalid="false" ng-model="homeCtrl.card.message"><div class="md-errors-spacer"></div>
+        </md-input-container>
+
       </md-content>
     </form>
 
     <div flex="50">
-      <md-subheader class="md-no-sticky">Card Directive</md-subheader>
+      <card title="homeCtrl.card.title" description="homeCtrl.card.description" message="homeCtrl.card.message" color="homeCtrl.card.color" background="homeCtrl.card.background" icon="homeCtrl.card.icon" add-to-favorites="homeCtrl.addToFavorites(title)" show-add="!homeCtrl.card.showAdd"></card>
       <md-subheader class="md-no-sticky">Favorite list</md-subheader>
+      <md-list>
+        <md-list-item class="md-2-line" ng-repeat="favorite in homeCtrl.favoriteCards track by $index">
+          <div class="md-list-item-text">
+            <h3>{{favorite}}</h3>
+          </div>
+        </md-list-item>
+      </md-list>
+
     </div>
   </div>
 
