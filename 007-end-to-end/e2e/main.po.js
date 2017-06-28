@@ -7,8 +7,17 @@
 
 var MainPage = function() {
 
-  this.title = element(by.model('homeCtrl.card.title'));
-  this.directiveTitle = element(by.css('#cardTitle'));
+  	this.title = element(by.model('homeCtrl.card.title'));
+  	this.description = element(by.model('homeCtrl.card.description')); 
+	this.background = element(by.xpath('//*[@id="input_0"]')); 
+	this.textColor = element(by.xpath('//*[@id="input_1"]')); 
+	this.addFavorite = element(by.css('#favoriteBtn'));
+
+  	this.directiveTitle = element(by.css('#cardTitle'));
+  	this.directiveDescription = element(by.css('#cardDescription'));
+  	this.directive = element(by.xpath('//*[@id="card"]'));
+
+  	this.favoriteList = element.all(by.repeater('favorite in homeCtrl.favoriteList'));
 
 };
 
