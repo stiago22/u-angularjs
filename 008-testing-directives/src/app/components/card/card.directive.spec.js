@@ -1,20 +1,6 @@
 (function() {
   'use strict';
 
-  describe('directive card', function() {
-   
-    beforeEach(module('angularApp'));
-
-    beforeEach(inject(function ($injector) {
-	  /* ... */
-	}));
-
-  });
-})();
-
-(function() {
-  'use strict';
-
   describe('card directive', function() {
     var $compile, $rootScope, scope;
 
